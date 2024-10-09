@@ -9,12 +9,5 @@ public partial class MainPage : ContentPage
 		InitializeComponent();
 	}
 
-	void Desenha()
-	{
-		MoverPassaro();
-		DesenhoPassaro();
-	}
- 
-
 }
 

@@ -1,35 +1,37 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="FlapFirebird.MainPage">
+             x:Class="FlapFirebird.MainPage"
+             Shell.NavBarIsVisible="False">
 
     
         <Grid> 
         <Image x:Name="ImagemFundo"
-               Resources="fundoazul.jpg"
+               Source="fundoazul.jpg"
+               Aspect="Fill"
                HorizontalOptions="Fill"
                VerticalOptions="Fill"/>
 
-        <Image x:Name="ImagemChao"
-               Resources="chao.jpg"
-               HorizontalOptions="Fill"
-               VerticalOptions="End"/>
-        
-        <Image x:Name="ImagemCanoAlto"
-               Resources="canoalto.png"
+        <Image x:Name="ImagemFirebird"
+               Source="firebird.png"
+               HorizontalOptions="Start"
+               HeightRequest="50"
+               WidthRequest="50"/>
+
+         <Image x:Name="ImagemCanoAlto"
+               Source="canoalto.png"
                HorizontalOptions="End"
                VerticalOptions="Start"/>
 
         <Image x:Name="ImagemCanoBaixo"
-               Resources="canobaixo.png"
+               Source="canobaixo.png"
                HorizontalOptions="End"
                VerticalOptions="End"/>
 
-        <Image x:Name="ImagemFirebird"
-               Resources="firebird.png"
-               HorizontalOptions="Start"
-               HeightRequest="50"
-               WidthRequest="50"/>
+        <Image x:Name="ImagemChao"
+               Source="chao.jpg"
+               HorizontalOptions="Fill"
+               VerticalOptions="End"/>
 
 
 
