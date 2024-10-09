@@ -15,18 +15,20 @@
         <Image x:Name="ImagemFirebird"
                Source="firebird.png"
                HorizontalOptions="Start"
-               HeightRequest="50"
-               WidthRequest="50"/>
+               HeightRequest="70"
+               WidthRequest="70"/>
 
          <Image x:Name="ImagemCanoAlto"
                Source="canoalto.png"
                HorizontalOptions="End"
-               VerticalOptions="Start"/>
+               VerticalOptions="Start"
+               HeightRequest="550"/>
 
         <Image x:Name="ImagemCanoBaixo"
                Source="canobaixo.png"
                HorizontalOptions="End"
-               VerticalOptions="End"/>
+               VerticalOptions="End"
+               HeightRequest="550"/>
 
         <Image x:Name="ImagemChao"
                Source="chao.jpg"
