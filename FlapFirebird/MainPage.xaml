@@ -5,7 +5,33 @@
 
     
         <Grid> 
+        <Image x:Name="ImagemFundo"
+               Resources="fundoazul.jpg"
+               HorizontalOptions="Fill"
+               VerticalOptions="Fill"/>
+
+        <Image x:Name="ImagemChao"
+               Resources="chao.jpg"
+               HorizontalOptions="Fill"
+               VerticalOptions="End"/>
         
+        <Image x:Name="ImagemCanoAlto"
+               Resources="canoalto.png"
+               HorizontalOptions="End"
+               VerticalOptions="Start"/>
+
+        <Image x:Name="ImagemCanoBaixo"
+               Resources="canobaixo.png"
+               HorizontalOptions="End"
+               VerticalOptions="End"/>
+
+        <Image x:Name="ImagemFirebird"
+               Resources="firebird.png"
+               HorizontalOptions="Start"
+               HeightRequest="50"
+               WidthRequest="50"/>
+
+
 
         </Grid>
 
