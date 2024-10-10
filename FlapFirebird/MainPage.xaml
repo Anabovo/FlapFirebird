@@ -19,16 +19,18 @@
                WidthRequest="70"/>
 
          <Image x:Name="ImagemCanoAlto"
-               Source="canoalto.png"
+               Source="canoalto.jpg"
                HorizontalOptions="End"
                VerticalOptions="Start"
-               HeightRequest="550"/>
+               WidthRequest="300"
+               HeightRequest="300"/>
 
         <Image x:Name="ImagemCanoBaixo"
-               Source="canobaixo.png"
+               Source="canobaixo.jpg"
                HorizontalOptions="End"
                VerticalOptions="End"
-               HeightRequest="550"/>
+               WidthRequest="300"
+               HeightRequest="300"/>
 
         <Image x:Name="ImagemChao"
                Source="chao.jpg"
