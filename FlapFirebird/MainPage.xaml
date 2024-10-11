@@ -4,41 +4,52 @@
              x:Class="FlapFirebird.MainPage"
              Shell.NavBarIsVisible="False">
 
-    
-        <Grid> 
-        <Image x:Name="ImagemFundo"
-               Source="fundoazul.jpg"
-               Aspect="Fill"
-               HorizontalOptions="Fill"
-               VerticalOptions="Fill"/>
 
-        <Image x:Name="ImagemFirebird"
-               Source="firebird.png"
-               HorizontalOptions="Start"
-               HeightRequest="70"
-               WidthRequest="70"/>
+       <Grid>
+              <Image x:Name="ImagemFundo"
+                     Source="fundoazul.jpg"
+                     Aspect="Fill"
+                     HorizontalOptions="Fill"
+                     VerticalOptions="Fill"/>
 
-         <Image x:Name="ImagemCanoAlto"
-               Source="canoalto.jpg"
-               HorizontalOptions="End"
-               VerticalOptions="Start"
-               WidthRequest="300"
-               HeightRequest="300"/>
+              <Image x:Name="ImagemFirebird"
+                     Source="firebird.png"
+                     HorizontalOptions="Start"
+                     HeightRequest="70"
+                     WidthRequest="70"/>
 
-        <Image x:Name="ImagemCanoBaixo"
-               Source="canobaixo.jpg"
-               HorizontalOptions="End"
-               VerticalOptions="End"
-               WidthRequest="300"
-               HeightRequest="300"/>
+              <Image x:Name="ImagemCanoAlto"
+                     Source="canoalto.jpg"
+                     HorizontalOptions="End"
+                     VerticalOptions="Start"
 
-        <Image x:Name="ImagemChao"
-               Source="chao.jpg"
-               HorizontalOptions="Fill"
-               VerticalOptions="End"/>
+                     HeightRequest="300"/>
 
+              <Image x:Name="ImagemCanoBaixo"
+                     Source="canobaixo.jpg"
+                     HorizontalOptions="End"
+                     VerticalOptions="End"
 
+                     HeightRequest="300"/>
 
-        </Grid>
+              <Image x:Name="ImagemChao"
+                     Source="chao.jpg"
+                     HorizontalOptions="Fill"
+                     VerticalOptions="End"/>
+
+              <Frame x:Name="FrameGameOver"
+                     Background="#99000000"
+                     VerticalOptions="Fill"
+                     HorizontalOptions="Fill">
+              <Frame.GestureRecognizers> 
+                  <TapGestureRecognizer Tapped="OnGameOverClicked"/>
+              </Frame.GestureRecognizers>
+              
+              <Image Source="tapimage.png"
+                     WidthRequest="100"
+                     HeightRequest="100"/>
+
+              </Frame>
+       </Grid>
 
 </ContentPage>
