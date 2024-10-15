@@ -51,6 +51,10 @@
                      HeightRequest="100"/>
 
               </Frame>
+
+               <Grid.GestureRecognizers>
+                <TapGestureRecognizer Tapped="OnGridClicked"/>
+              </Grid.GestureRecognizers>
        </Grid>
 
 </ContentPage>
