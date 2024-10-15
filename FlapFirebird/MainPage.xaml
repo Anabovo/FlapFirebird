@@ -35,7 +35,8 @@
               <Image x:Name="ImagemChao"
                      Source="chao.jpg"
                      HorizontalOptions="Fill"
-                     VerticalOptions="End"/>
+                     VerticalOptions="End"
+                     HeightRequest="100"/>
 
               <Frame x:Name="FrameGameOver"
                      Background="#99000000"

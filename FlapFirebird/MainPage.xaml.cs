@@ -2,16 +2,12 @@
 
 public partial class MainPage : ContentPage
 {
-    
-	const int gravidade=5;
-	const int tempoEntreFrames=100;
-
-	
+	const int gravidade=10;
+	const int tempoEntreFrames=90;
 	bool estaMorto=true;
 	double larguraJanela=0;
 	double alturaJanela=0;
 	int velocidade=20;
-
 
 	public MainPage()
 	{
@@ -29,8 +25,14 @@ public partial class MainPage : ContentPage
 		while (! estaMorto)
 		{
 			AplicaGravidade();
-			await Task.Delay(tempoEntreFrames);
 			GerenciaCanos();
+			if (VerificaColisao())
+			{
+				estaMorto=true;
+				FrameGameOver.IsVisible=true;
+				break;
+			}
+			await Task.Delay(tempoEntreFrames);
 		}
 	}
 
@@ -58,11 +60,43 @@ public partial class MainPage : ContentPage
 		Inicializar();
 		Desenhar();
 	}
-	 void Inicializar()
-	 {
+
+	void Inicializar()
+	{
 		estaMorto=false;
 		ImagemFirebird.TranslationY=0;
-	 }
+	}
+
+	bool VerificaColisao()
+	{
+		if(!estaMorto)
+		{
+			if (VerificaColisaoTeto() ||
+			    VerificaColisaoChao())
+			{
+				return true;
+			}
+		}
+		return false;
+	}
+
+	bool VerificaColisaoTeto()
+	{
+		var minY = -alturaJanela/2;
+		if (ImagemFirebird.TranslationY <= minY)
+		    return true;
+		else
+		    return false;
+	}
+
+	bool VerificaColisaoChao()
+	{
+	    var maxY= alturaJanela/2 - ImagemChao.HeightRequest;
+		if(ImagemFirebird.TranslationY >= maxY)
+		   return true;
+		else
+		   return false;
+    }
 
 }
 
