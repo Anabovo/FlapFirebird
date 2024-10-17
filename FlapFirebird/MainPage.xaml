@@ -36,7 +36,17 @@
                      Source="chao.jpg"
                      HorizontalOptions="Fill"
                      VerticalOptions="End"
-                     HeightRequest="100"/>
+                     HeightRequest="100"
+                     Aspect="Fill"/>
+
+              <Label x:Name="labelScore"
+                     HorizontalOptions="Start"
+                     VerticalOptions="Start"
+                     HorizontalTextAlignment="Center"
+                     FontSize="30"
+                     TextColor="#ffcc00"
+                     FontFamily="Gamer.ttf"
+                     Margin="10,10"/> 
 
               <Frame x:Name="FrameGameOver"
                      Background="#99000000"
@@ -55,6 +65,8 @@
                <Grid.GestureRecognizers>
                 <TapGestureRecognizer Tapped="OnGridClicked"/>
               </Grid.GestureRecognizers>
+
+              
        </Grid>
 
 </ContentPage>

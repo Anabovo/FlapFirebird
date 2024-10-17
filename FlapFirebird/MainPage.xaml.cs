@@ -1,17 +1,21 @@
-﻿namespace FlapFirebird;
+﻿using Windows.ApplicationModel.Search.Core;
+
+namespace FlapFirebird;
 
 public partial class MainPage : ContentPage
 {
 	const int gravidade=30;
-	const int tempoEntreFrames=80;
+	const int tempoEntreFrames=75;
 	bool estaMorto=true;
 	double larguraJanela=0;
 	double alturaJanela=0;
 	int velocidade=20;
-	const int maxTempoPulando=1;
+	const int maxTempoPulando=2;
 	int tempoPulando=0;
 	bool estaPulando=false;
 	const int forcaPulo=45;
+	const int aberturaMinima=200;
+	int score=0;
 
 	public MainPage()
 	{
@@ -54,10 +58,16 @@ public partial class MainPage : ContentPage
 	{
 		ImagemCanoAlto.TranslationX-=velocidade;
 		ImagemCanoBaixo.TranslationX-=velocidade;
-		if (ImagemCanoBaixo.TranslationX<-larguraJanela)
+		if (ImagemCanoBaixo.TranslationX<= -larguraJanela)
 	    {
+			var alturaMax=-10;
+			var alturaMin=-ImagemCanoBaixo.HeightRequest;
+			ImagemCanoAlto.TranslationY=Random.Shared.Next((int)alturaMin, (int)alturaMax);
+			ImagemCanoBaixo.TranslationY=ImagemCanoAlto.TranslationY=aberturaMinima;
 			ImagemCanoBaixo.TranslationX=0;
 			ImagemCanoAlto.TranslationX=0;
+			score++;
+			labelScore.Text = "Score:" + score.ToString("D3");
 		}
 	}
 
@@ -120,6 +130,8 @@ public partial class MainPage : ContentPage
 	{
 		estaPulando=true;
 	}
+
+
 
 }
 
