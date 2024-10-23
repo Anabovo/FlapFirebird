@@ -68,6 +68,8 @@ public partial class MainPage : ContentPage
 			ImagemCanoAlto.TranslationX=0;
 			score++;
 			labelScore.Text = "Score:" + score.ToString("D3");
+			if (score % 2 == 0)
+			    velocidade++;
 		}
 	}
 
@@ -89,7 +91,9 @@ public partial class MainPage : ContentPage
 		if(!estaMorto)
 		{
 			if (VerificaColisaoTeto() ||
-			    VerificaColisaoChao())
+			    VerificaColisaoChao() ||
+				VerificaColisaoCanoalto() ||
+				VerificaColisaoCanoBaixo())
 			{
 				return true;
 			}
@@ -130,6 +134,42 @@ public partial class MainPage : ContentPage
 	{
 		estaPulando=true;
 	}
+
+	bool VerificaColisaoCanoalto()
+	{
+	   var posHPardal = (larguraJanela/2)-(ImagemFirebird.WidthRequest/2);
+	   var posvPardal = (larguraJanela/2)-(ImagemFirebird.HeightRequest/2);
+
+	   if(posHPardal >= Math.Abs(ImagemCanoAlto.TranslationX)-ImagemCanoAlto.WidthRequest&&
+	      posHPardal <= Math.Abs(ImagemCanoAlto.TranslationX)+ImagemCanoAlto.WidthRequest&&
+		  posvPardal <= ImagemCanoAlto.HeightRequest + ImagemCanoAlto.TranslationY)
+		  {
+			return true;
+		  }
+          else
+		  {
+			return false;
+		  }
+	}
+
+	bool VerificaColisaoCanoBaixo()
+	{
+		var posHPardal = (larguraJanela/2)-(ImagemFirebird.WidthRequest/2);
+		var posvPardal = (alturaJanela/2)+(ImagemFirebird.HeightRequest/2)+ImagemFirebird.TranslationY;
+		var yMaxCano = ImagemCanoAlto.HeightRequest+ImagemCanoAlto.TranslationY+aberturaMinima;
+		if(posHPardal >= Math.Abs(ImagemCanoBaixo.TranslationX)-ImagemCanoBaixo.WidthRequest&&
+		   posHPardal <= Math.Abs(ImagemCanoBaixo.TranslationX)+ImagemCanoBaixo.WidthRequest&&
+		   posvPardal >= yMaxCano)
+		   {
+			return true;
+		   }
+		   else
+		   {
+			return false;
+		   }
+	}
+
+
 
 
 
