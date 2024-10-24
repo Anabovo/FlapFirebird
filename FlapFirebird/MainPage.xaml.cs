@@ -23,6 +23,11 @@ public partial class MainPage : ContentPage
 		
 	}
 
+	protected override void OnAppearing()
+	{
+		base.OnAppearing();
+	}
+
 	void AplicaGravidade()
 	{
 		ImagemFirebird.TranslationY+=gravidade;
@@ -138,11 +143,11 @@ public partial class MainPage : ContentPage
 	bool VerificaColisaoCanoalto()
 	{
 	   var posHPardal = (larguraJanela/2)-(ImagemFirebird.WidthRequest/2);
-	   var posvPardal = (larguraJanela/2)-(ImagemFirebird.HeightRequest/2);
+	   var posVPardal = (larguraJanela/2)-(ImagemFirebird.HeightRequest/2);
 
 	   if(posHPardal >= Math.Abs(ImagemCanoAlto.TranslationX)-ImagemCanoAlto.WidthRequest&&
 	      posHPardal <= Math.Abs(ImagemCanoAlto.TranslationX)+ImagemCanoAlto.WidthRequest&&
-		  posvPardal <= ImagemCanoAlto.HeightRequest + ImagemCanoAlto.TranslationY)
+		  posVPardal <= ImagemCanoAlto.HeightRequest + ImagemCanoAlto.TranslationY)
 		  {
 			return true;
 		  }
@@ -155,11 +160,11 @@ public partial class MainPage : ContentPage
 	bool VerificaColisaoCanoBaixo()
 	{
 		var posHPardal = (larguraJanela/2)-(ImagemFirebird.WidthRequest/2);
-		var posvPardal = (alturaJanela/2)+(ImagemFirebird.HeightRequest/2)+ImagemFirebird.TranslationY;
+		var posVPardal = (alturaJanela/2)+(ImagemFirebird.HeightRequest/2)+ImagemFirebird.TranslationY;
 		var yMaxCano = ImagemCanoAlto.HeightRequest+ImagemCanoAlto.TranslationY+aberturaMinima;
 		if(posHPardal >= Math.Abs(ImagemCanoBaixo.TranslationX)-ImagemCanoBaixo.WidthRequest&&
 		   posHPardal <= Math.Abs(ImagemCanoBaixo.TranslationX)+ImagemCanoBaixo.WidthRequest&&
-		   posvPardal >= yMaxCano)
+		   posVPardal >= yMaxCano)
 		   {
 			return true;
 		   }

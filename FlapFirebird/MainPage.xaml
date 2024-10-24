@@ -16,20 +16,23 @@
                      Source="firebird.png"
                      HorizontalOptions="Start"
                      HeightRequest="70"
-                     WidthRequest="70"/>
+                     WidthRequest="70"
+                     />
 
               <Image x:Name="ImagemCanoAlto"
-                     Source="canoalto.jpg"
+                     Source="canoalto.png"
                      HorizontalOptions="End"
                      VerticalOptions="Start"
-
+                     WidthRequest="100"
+                     BackgroundColor="BlueViolet"
                      HeightRequest="300"/>
 
               <Image x:Name="ImagemCanoBaixo"
-                     Source="canobaixo.jpg"
+                     Source="canobaixo.png"
                      HorizontalOptions="End"
                      VerticalOptions="End"
-
+                     WidthRequest="100"
+                     BackgroundColor="BlueViolet"
                      HeightRequest="300"/>
 
               <Image x:Name="ImagemChao"
