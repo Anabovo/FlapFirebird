@@ -58,6 +58,15 @@
               <Frame.GestureRecognizers> 
                   <TapGestureRecognizer Tapped="OnGameOverClicked"/>
               </Frame.GestureRecognizers>
+
+              <Label x:Name="labelGameOverScore"
+                     Text="Score: 00000"
+                     FontSize="30"
+                     Margin="0,20,20,0"
+                     FontFamily="slkscre"
+                     VerticalOptions="Start"
+                     HorizontalOptions="Center"
+                     HorizontalTextAlignment="Center"/>
               
               <Image Source="tapimage.png"
                      WidthRequest="100"
